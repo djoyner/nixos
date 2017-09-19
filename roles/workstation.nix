@@ -3,34 +3,45 @@
 {
   environment.systemPackages = with pkgs; [
     acpi
-    chromium
+    aspell
+    aspellDicts.en
+    bind
     dropbox
     emacs
+    google-chrome
+    hwinfo
     keepassx
     openvpn
-    transmission
-    unifi
+    pciutils
+    strace
+    tmux
+    transmission_gtk
     vlc
   ];
+
+  #services.gnome3 = {
+  #  gnome-keyring.enable = true;
+  #  sushi.enable = true;
+  #};
 
   services.printing.enable = true;
 
   services.xserver = {
     enable = true;
     layout = "us";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome3.enable = true;
-    startGnuPGAgent = true;
+    desktopManager.plasma5.enable = true;
+    displayManager.sddm.enable = true;
   };
 
-  services.unifi.enable = true;
-
   fonts = {
+    enableCoreFonts = true;
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
       dejavu_fonts
-      meslo-lg
+      freefont_ttf
+      inconsolata
+      terminus_font
       ubuntu_font_family
     ];
   };

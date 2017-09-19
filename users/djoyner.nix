@@ -6,7 +6,7 @@
     uid = 1000;
     home = "/home/djoyner";
     description = "David Joyner";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     initialHashedPassword = "$6$.erigt.skjT$0hMp2iF.tr5sttLbE2BNdniXnyx7UKTTigc9Oegokbjm/TXLIh4UBgyu/FzJvUalKH6L8L82xlO/1VKWx1aEA1";
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8BjaJs86sOr48XAumXu9wiPbsej/502GXFiNW8Nmxzn/urEbjcGPe3m3JdMoSblLKzxkDQeVLQT1EfHFTTlu4QJYyqgAtVlGUN8zNEGXjxjB/WQPAdlpy5EuJHvRUc30lUh2AgM3pG4CHcH1NHMnQn+fWktJA1s87Eu2QJ2gEid/iEbYFmKr2GEB+CCXynKBC0QBNLsvqI9rfp7C8FJ4MrlPHCMkGsqubr4HDLbG5F1mdCuqqlMY/AoifY5nf7cvNpfqYwLZKFlBZa4cAq3oBqXD1vZKo7MedmAd1FKUHQ46BxgJZ/IKTnxycmY+EALG4FSAyZKRJjq2jV+mdQpg5 david@joynerhome.net"

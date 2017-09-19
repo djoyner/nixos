@@ -5,22 +5,31 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "ohci_pci" "ahci" "sd_mod" ];
-  boot.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/eecd47a7-abc6-4715-972e-90896985faa2";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
   swapDevices = [ ];
 
-  nix.maxJobs = lib.mkDefault 1;
+  nix.maxJobs = lib.mkDefault 8;
 
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  virtualisation.virtualbox.guest.enable = true;
+  networking.hostName = "wintermute.joynerhome.net";
+  networking.interfaces.eno1.ip4 =
+    [
+      {
+        address = "192.168.250.4";
+        prefixLength = 24;
+      }
+    ];
+
+  services.printing.drivers = [ pkgs.gutenprint ];
 }
