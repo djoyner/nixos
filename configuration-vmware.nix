@@ -3,14 +3,15 @@
 {
   imports =
     [ # Devices
-      ./devices/wintermute.nix
+      ./devices/vmware.nix
 
       # Roles
       ./roles/common.nix
-      ./roles/joynerhome.nix
       ./roles/workstation.nix
 
       # Users
       ./users/djoyner.nix
     ];
+
+  system.stateVersion = "17.03";
 }

@@ -6,9 +6,9 @@
     aspell
     aspellDicts.en
     bind
+    chromium
     dropbox
     emacs
-    google-chrome
     hwinfo
     keepassx
     openvpn
@@ -24,7 +24,10 @@
   #  sushi.enable = true;
   #};
 
-  services.printing.enable = true;
+  services.printing = {
+    drivers = [ pkgs.gutenprint ];
+    enable = true;
+  };
 
   services.xserver = {
     enable = true;
