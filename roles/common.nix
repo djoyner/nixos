@@ -15,11 +15,13 @@
     htop
     hwinfo
     inetutils
+    jq
     lsof
     man
     mosh
     openssl
     pciutils
+    pv
     strace
     sudo
     telnet
