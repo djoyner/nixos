@@ -4,17 +4,26 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    acpi
     bash
+    bind
     cacert
+    coreutils
     curl
+    file
     git
     htop
+    hwinfo
     inetutils
     lsof
     man
     mosh
+    openssl
+    pciutils
+    strace
     sudo
     telnet
+    tmux
     vim
     wget
     unrar

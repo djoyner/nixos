@@ -2,19 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    acpi
     aspell
     aspellDicts.en
-    bind
     chromium
     dropbox
     emacs
-    hwinfo
     keepassx
     openvpn
-    pciutils
-    strace
-    tmux
     transmission_gtk
     vlc
   ];
