@@ -39,6 +39,8 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  networking.firewall.enable = false;
+
   programs.bash.enableCompletion = true;
   programs.ssh.startAgent = false;
 
