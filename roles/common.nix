@@ -19,6 +19,7 @@
     lsof
     man
     mosh
+    nix-repl
     openssl
     pciutils
     pv
@@ -42,7 +43,6 @@
   networking.firewall.enable = false;
 
   programs.bash.enableCompletion = true;
-  programs.ssh.startAgent = false;
 
   security.sudo.wheelNeedsPassword = false;
 
