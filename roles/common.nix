@@ -19,7 +19,6 @@
     lsof
     man
     mosh
-    nix-repl
     openssl
     pciutils
     pv

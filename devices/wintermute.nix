@@ -37,5 +37,7 @@
 
   environment.systemPackages = with pkgs; [ cifs-utils ];
 
-  services.printing.drivers = [ pkgs.gutenprint ];
+  services = {
+    printing.drivers = [ pkgs.gutenprint ];
+  };
 }

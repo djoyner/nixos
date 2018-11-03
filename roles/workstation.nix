@@ -5,15 +5,18 @@
     adobe-reader
     aspell
     aspellDicts.en
-    chromium
     dropbox
     emacs
     feh
+    google-chrome
     keepassx
     openvpn
     termite
     transmission_gtk
     vlc
+    xfce.thunar-archive-plugin
+    xfce.thunar-dropbox-plugin
+    xfce.thunar-volman
   ];
 
   fonts = {
@@ -33,6 +36,7 @@
   hardware = {
     enableAllFirmware = true;
     pulseaudio.enable = true;
+    u2f.enable = true;
   };
 
   programs = {
@@ -48,14 +52,22 @@
     xserver = {
       enable = true;
       layout = "us";
-      xkbOptions = "ctrl:nocaps";
-      windowManager.i3.enable = true;
-      windowManager.i3.extraPackages = with pkgs; [
-        i3status
-        i3lock
-        rofi
-      ];
+      xkbOptions = "terminate:ctrl_alt_bksp, ctrl:nocaps";
       displayManager.lightdm.enable = true;
+      windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-gaps;
+        extraPackages = with pkgs; [
+          i3status
+          i3lock
+          rofi
+        ];
+      };
+      desktopManager.xfce = {
+        enable = true;
+        enableXfwm = false;
+        noDesktop = true;
+      };
     };
   };
 
