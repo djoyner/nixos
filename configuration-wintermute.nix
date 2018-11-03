@@ -7,6 +7,7 @@
 
       # Roles
       ./roles/common.nix
+      ./roles/dockerd.nix
       ./roles/joynerhome.nix
       ./roles/workstation.nix
 

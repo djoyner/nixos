@@ -7,6 +7,7 @@
 
   boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
   boot.kernelModules = [ ];
+  boot.kernelParams = [ "vga=792" "nomodeset" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -22,5 +23,8 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  services.vmwareGuest.enable = true;
+  services.vmwareGuest =
+    { enable = true;
+      headless = true;
+    };
 }

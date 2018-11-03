@@ -7,11 +7,9 @@
 
       # Roles
       ./roles/common.nix
-      ./roles/workstation.nix
+      ./roles/dockerd.nix
 
       # Users
       ./users/djoyner.nix
     ];
-
-  system.stateVersion = "17.03";
 }
