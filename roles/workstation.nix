@@ -5,10 +5,11 @@
     adobe-reader
     aspell
     aspellDicts.en
+    chromium
     dropbox
     emacs
     feh
-    google-chrome
+    firefox
     keepassx
     openvpn
     termite
@@ -17,6 +18,8 @@
     xfce.thunar-archive-plugin
     xfce.thunar-dropbox-plugin
     xfce.thunar-volman
+    zathura
+    zoom-us
   ];
 
   fonts = {
@@ -42,6 +45,24 @@
   programs = {
     ssh.startAgent = false;
   };
+
+  #xdg.mimeApps = {
+    #enable = true;
+    #defaultApplications = {
+      #"application/pdf" = [ "zathura.desktop" ];
+      #"application/x-pdf" = [ "zathura.desktop" ];
+      #"text/plain" = [ "emacs.desktop" ];
+      #"text/x-script.python" = [ "emacs.desktop" ];
+      #"text/x-script.sh" = [ "emacs.desktop" ];
+      #"text/html" = [ "emacs.desktop" ];
+      #"text/css" = [ "emacs.desktop" ];
+      #"text/xml" = [ "emacs.desktop" ];
+      #"x-scheme-handler/http" = [ "chromium-browser.desktop" ];
+      #"x-scheme-handler/https" = [ "chromium-browser.desktop" ];
+      #"x-scheme-handler/about" = [ "chromium-browser.desktop" ];
+      #"x-scheme-handler/unknown" = [ "chromium-browser.desktop" ];
+    #};
+  #};
 
   services = {
     printing = {
